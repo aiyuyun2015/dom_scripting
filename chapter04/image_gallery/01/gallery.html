@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Image Gallery</title>
+</head>
+<body>
+
+<script>
+  function countBodyChildren(){
+  
+  var body_element = document.getElementsByTagName("body")[0];
+  alert(body_element.childNodes.length)
+
+
+}
+//window.onload = countBodyChildren;
+
+
+body_element = document.getElementsByTagName("body")[0].childNodes;
+console.log(body_element);
+for (var i=0; i< 12 ; i++){
+  console.log(i, document.getElementsByTagName("body")[0].childNodes[i].nodeType)
+}
+
+
+
+
+</script>
+
+  <h1>Snapshots</h1>
+  <ul>
+    <li>
+      <a href="images/fireworks.jpg" title="A fireworks display">Fireworks</a>
+    </li>
+    <li>
+      <a href="images/coffee.jpg" title="A cup of black coffee">Coffee</a>
+    </li>
+    <li>
+      <a href="images/rose.jpg" title="A red, red rose">Rose</a>
+    </li>
+    <li>
+      <a href="images/bigben.jpg" title="The famous clock">Big Ben</a>
+    </li>
+  </ul>
+</body>
+</html>
