@@ -1,4 +1,5 @@
 function displayAbbreviations() {
+
   if (!document.getElementsByTagName || !document.createElement || !document.createTextNode) return false;
 // get all the abbreviations
   var abbreviations = document.getElementsByTagName("abbr");
@@ -15,7 +16,9 @@ function displayAbbreviations() {
 // create the definition list
   var dlist = document.createElement("dl");
 // loop through the definitions
+// key here is W3C, DOM, API, HTML, XML
   for (key in defs) {
+    //console.log(key)
     var definition = defs[key];
 // create the definition title
     var dtitle = document.createElement("dt");

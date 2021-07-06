@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- example to understand blockquote function in displayCitation-->
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Explaining the Document Object Model</title>
+  </head>
+  <body>
+    
+    <blockquote cite="http://www.w3.org/DOM/">
+      <p>
+      A platform- and language-neutral interface that will allow programs
+      and scripts to dynamically access and update the
+      content, structure and style of documents.
+      </p>
+    </blockquote>
+    <script>
+    // get a list of elements with name blockquote
+    var quotes = document.getElementsByTagName("blockquote");
+
+    console.log(quotes)
+    // there is only one blockquote, it has a method called getAttribute, so we want to get the value of "cite" which is a string url
+    var url = quotes[0].getAttribute("cite");
+    console.log(url)
+
+    // the blockquote element has one element (p tag), we extract it here and assign it to "elem"
+    var quoteChildren = quotes[0].getElementsByTagName('*');
+    // console.log(quoteChildren[0])
+    var elem = quoteChildren[quoteChildren.length - 1];
+    console.log(elem)
+
+    // the purpose is to create a link: "<a href=$url> source  </a>"", below is how we do it.
+    var link = document.createElement("a");
+    var link_text = document.createTextNode("source");
+    link.appendChild(link_text);
+    link.setAttribute("href",url);
+    console.log(link)
+    
+    // next, this dude also want to add sup to link
+    // <sup> <a href=$url> source </a> </sup>
+    var superscript = document.createElement("sup");
+    superscript.appendChild(link);
+    // add the markup to the last element node in the blockquote
+    elem.appendChild(superscript);
+    console.log(elem)
+    </script>
+  </body>
+</html>

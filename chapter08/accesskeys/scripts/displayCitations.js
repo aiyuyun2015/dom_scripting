@@ -9,7 +9,9 @@ function displayCitations() {
 // store the cite attribute
     var url = quotes[i].getAttribute("cite");
 // get all the element nodes in the blockquote
+    //console.log(url)
     var quoteChildren = quotes[i].getElementsByTagName('*');
+    //console.log(quoteChildren)
 // if there are no element nodes, continue the loop
     if (quoteChildren.length < 1) continue;
 // get the last element node in the blockquote
